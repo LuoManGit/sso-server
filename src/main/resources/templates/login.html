@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+<form action="/sso/doLogin?" method="post">
+    <p th:text="${msg}"/><br/>
+    用户名：<input type="text" name="name"/><br/>
+    密码：<input type="password" name="password"/><br/>
+    <input type="submit" value="提交" onclick="test()">
+</form>
+<script type="text/javascript">
+    function test(){
+        var f = document.getElementsByTagName("form")[0];
+        var service = '[[${service}]]';
+        f.action=f.action+"service="+service;
+    }
+</script>
+</body>
+</html>
